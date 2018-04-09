@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Deontologia</string>
+
+
+    <string name="iniciar">Iniciar Juego</string>
+    <string name="AcercaDe">Acerca del Juego</string>
 </resources>

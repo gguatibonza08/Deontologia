@@ -1,10 +1,14 @@
 package co.com.gguatibonza.deontologia;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    Button jugar, acerca, como;
 
     MediaPlayer md;
 
@@ -13,7 +17,36 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         md = MediaPlayer.create(this, R.raw.juego);
-        md.start();
+        jugar = findViewById(R.id.MainJugar);
+        como = findViewById(R.id.MainComo);
+        acerca = findViewById(R.id.MainAcerca);
         md.setLooping(true);
+        jugar.setOnClickListener(this);
+        como.setOnClickListener(this);
+        acerca.setOnClickListener(this);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        md.start();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.MainJugar:
+                Intent i = new Intent(this, Jugar.class);
+                startActivity(i);
+                break;
+            case R.id.MainComo:
+                Intent j = new Intent(this, ComoJugar.class);
+                startActivity(j);
+                break;
+            case R.id.MainAcerca:
+                Intent k = new Intent(this, AcercaDe.class);
+                startActivity(k);
+                break;
+        }
     }
 }

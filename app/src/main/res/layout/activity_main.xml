@@ -34,12 +34,14 @@
         android:weightSum="1">
 
         <Button
+            android:id="@+id/MainJugar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight=".5"
             android:text="@string/iniciar" />
 
         <Button
+            android:id="@+id/MainComo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight=".5"
@@ -48,6 +50,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/MainAcerca"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"

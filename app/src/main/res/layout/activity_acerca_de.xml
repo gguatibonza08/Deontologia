@@ -15,6 +15,7 @@
         android:orientation="horizontal">
 
         <TextView
+            android:fontFamily="@font/bevan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -31,6 +32,7 @@
     </LinearLayout>
 
     <TextView
+        android:fontFamily="@font/bevan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -59,6 +61,7 @@
                 android:src="@drawable/gk" />
 
             <TextView
+                android:fontFamily="@font/bevan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/gk"
@@ -78,6 +81,7 @@
                 android:src="@drawable/nandy" />
 
             <TextView
+                android:fontFamily="@font/bevan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/nandy"
@@ -107,6 +111,7 @@
                 android:src="@drawable/kolarte" />
 
             <TextView
+                android:fontFamily="@font/bevan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/kolarte"
@@ -126,6 +131,7 @@
                 android:src="@drawable/leo" />
 
             <TextView
+                android:fontFamily="@font/bevan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/leo"

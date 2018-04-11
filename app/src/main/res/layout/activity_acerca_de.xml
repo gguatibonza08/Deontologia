@@ -55,6 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight=".5"
+            app:cardBackgroundColor="@color/dark"
             app:cardCornerRadius="10dp">
 
             <LinearLayout
@@ -74,7 +75,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="@string/gk"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textColor="@color/textCard"
+                    android:textStyle="bold" />
             </LinearLayout>
 
 
@@ -85,6 +88,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight=".5"
+            app:cardBackgroundColor="@color/dark"
             app:cardCornerRadius="10dp">
 
             <LinearLayout
@@ -104,7 +108,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="@string/nandy"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textColor="@color/textCard"
+                    android:textStyle="bold" />
             </LinearLayout>
 
 
@@ -126,6 +132,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight=".5"
+            app:cardBackgroundColor="@color/dark"
             app:cardCornerRadius="10dp">
 
             <LinearLayout
@@ -145,7 +152,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="@string/kolarte"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textColor="@color/textCard"
+                    android:textStyle="bold" />
             </LinearLayout>
 
 
@@ -156,6 +165,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight=".5"
+            app:cardBackgroundColor="@color/dark"
             app:cardCornerRadius="10dp">
 
             <LinearLayout
@@ -175,7 +185,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="@string/leo"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textColor="@color/textCard"
+                    android:textStyle="bold" />
             </LinearLayout>
 
 

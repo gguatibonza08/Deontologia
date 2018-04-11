@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.MainJugar:
-                Intent i = new Intent(this, Jugar.class);
+                Intent i = new Intent(this, EleccionAvatar.class);
                 startActivity(i);
                 break;
             case R.id.MainComo:

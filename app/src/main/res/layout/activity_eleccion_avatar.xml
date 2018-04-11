@@ -7,6 +7,11 @@
     android:orientation="vertical"
     tools:context="co.com.gguatibonza.deontologia.EleccionAvatar">
 
+    <include
+        android:id="@+id/toolbarHome"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/textView"
@@ -16,6 +21,7 @@
         android:fontFamily="@font/bevan"
         android:gravity="center"
         android:text="@string/eleccionAvatar"
+        android:textColor="@color/textDark"
         android:textSize="20sp" />
 
     <LinearLayout
@@ -28,11 +34,14 @@
 
 
         <android.support.v7.widget.CardView
+            android:id="@+id/gian"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight=".5"
-            app:cardCornerRadius="10dp">
+            app:cardBackgroundColor="@color/dark"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -50,19 +59,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/aclonica"
                     android:text="@string/gk"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textColor="@color/textCard"
+                    android:textStyle="bold" />
             </LinearLayout>
 
 
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
+            android:id="@+id/nandy"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight=".5"
-            app:cardCornerRadius="10dp">
+            app:cardBackgroundColor="@color/dark"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -80,8 +95,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/aclonica"
                     android:text="@string/nandy"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textColor="@color/textCard"
+                    android:textStyle="bold" />
             </LinearLayout>
 
 
@@ -99,11 +117,14 @@
 
 
         <android.support.v7.widget.CardView
+            android:id="@+id/kolarte"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight=".5"
-            app:cardCornerRadius="10dp">
+            app:cardBackgroundColor="@color/dark"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -121,19 +142,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/aclonica"
                     android:text="@string/kolarte"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textColor="@color/textCard"
+                    android:textStyle="bold" />
             </LinearLayout>
 
 
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
+            android:id="@+id/leo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight=".5"
-            app:cardCornerRadius="10dp">
+            app:cardBackgroundColor="@color/dark"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -151,8 +178,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/aclonica"
                     android:text="@string/leo"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textColor="@color/textCard"
+                    android:textStyle="bold" />
             </LinearLayout>
 
 
@@ -170,12 +200,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/hazEscogidoA" />
+            android:text="@string/hazEscogidoA"
+            android:textColor="@color/textDark" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="algo" />
+            android:text="algo"
+            android:textColor="@color/textDark" />
     </LinearLayout>
 
     <Button

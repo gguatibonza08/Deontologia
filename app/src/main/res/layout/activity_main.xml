@@ -4,57 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="10dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:fontFamily="@font/bevan"
-        android:text="@string/nombreJuego"
-        android:textAlignment="center"
-        android:textSize="25sp" />
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animation_view"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="70dp"
-        app:lottie_autoPlay="true"
-        app:lottie_fileName="share_for_graminsta_app.json"
-        app:lottie_loop="true" />
+    <include
+        android:id="@+id/toolbarHome"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        android:weightSum="1">
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bevan"
+            android:text="@string/nombreJuego"
+            android:textAlignment="center"
+            android:textColor="@color/textDark"
+            android:textSize="25sp" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation_view"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="30dp"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="share_for_graminsta_app.json"
+            app:lottie_loop="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/MainJugar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:text="@string/iniciar" />
+
+            <Button
+                android:id="@+id/MainComo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:text="@string/comoJugar" />
+
+        </LinearLayout>
 
         <Button
-            android:id="@+id/MainJugar"
-            android:layout_width="0dp"
+            android:id="@+id/MainAcerca"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_weight=".5"
-            android:text="@string/iniciar" />
-
-        <Button
-            android:id="@+id/MainComo"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight=".5"
-            android:text="@string/comoJugar" />
-
+            android:layout_marginTop="10dp"
+            android:text="@string/AcercaApp" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/MainAcerca"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/AcercaApp" />
 
 </LinearLayout>

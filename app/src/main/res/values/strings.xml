@@ -1,11 +1,8 @@
 <resources>
-
-
     <string name="gk">Gian Guatibonza</string>
     <string name="nandy">Luisa Chacón</string>
     <string name="kolarte">Kevin Olarte</string>
     <string name="leo">Leonardo Angulo</string>
-
     <string name="app_name">Deontologia</string>
     <string name="nombreJuego">INGENIEROS AL PODER</string>
     <string name="iniciar">Iniciar Juego</string>
@@ -20,6 +17,9 @@
     <string name="proyección">B. Proyección</string>
     <string name="analisis">C. Análisis</string>
     <string name="aspiracion">D. Aspiración</string>
+    <string name="respuestaCorrecta">TU RESPUESTA ES CORRECTA</string>
+    <string name="respuestaIncorrecta">TU RESPUESTA ES INCORRECTA</string>
     <string name="textoPor">Esta APP fue pensada para educar a los alumnos de Ingenieria de sistemas que estan cursando los primeros semestres de sus carrera sobre temas relacionados con la etica profesional.</string>
     <string name="todo">TODO</string>
+
 </resources>

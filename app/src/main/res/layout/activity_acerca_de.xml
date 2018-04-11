@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
     android:padding="10dp"
-    android:gravity="center"
     tools:context=".AcercaDe">
 
 
@@ -56,12 +56,12 @@
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/profile" />
+                android:src="@drawable/gk" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Gian Guatibonza"
+                android:text="@string/gk"
                 android:textAlignment="center" />
         </LinearLayout>
 
@@ -75,12 +75,12 @@
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/profile" />
+                android:src="@drawable/nandy" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Luisa Chacon"
+                android:text="@string/nandy"
                 android:textAlignment="center" />
         </LinearLayout>
 
@@ -104,12 +104,12 @@
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/profile" />
+                android:src="@drawable/kolarte" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Kevin Olarte"
+                android:text="@string/kolarte"
                 android:textAlignment="center" />
         </LinearLayout>
 
@@ -123,12 +123,12 @@
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/profile" />
+                android:src="@drawable/leo" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Leonar Angulo"
+                android:text="@string/leo"
                 android:textAlignment="center" />
         </LinearLayout>
 

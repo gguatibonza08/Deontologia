@@ -19,6 +19,10 @@
         <activity android:name=".AcercaDe" />
         <activity android:name=".ComoJugar" />
         <activity android:name=".Jugar" />
+<<<<<<< Updated upstream
+=======
+        <activity android:name=".EleccionAvatar"></activity>
+>>>>>>> Stashed changes
     </application>
 
 </manifest>

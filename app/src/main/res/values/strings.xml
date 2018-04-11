@@ -13,5 +13,7 @@
     <string name="AcercaApp">Acerca de la APP</string>
     <string name="programadores">PROGRAMADORES</string>
     <string name="eleccionAvatar">Escoge tu avatar</string>
+    <string name="hazEscogidoA">Haz escogido a: </string>
+    <string name="aceptar">Aceptar</string>
     <string name="textoPor">Esta APP fue pensada para educar a los alumnos de Ingenieria de sistemas que estan cursando los primeros semestres de sus carrera sobre temas relacionados con la etica profesional.</string>
 </resources>

@@ -18,6 +18,11 @@ public class PreguntaFragment extends Fragment {
         // Required empty public constructor
     }
 
+    public static PreguntaFragment newInstance() {
+        PreguntaFragment fragment = new PreguntaFragment();
+        return fragment;
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

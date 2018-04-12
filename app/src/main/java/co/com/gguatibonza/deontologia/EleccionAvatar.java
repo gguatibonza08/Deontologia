@@ -15,6 +15,7 @@ public class EleccionAvatar extends AppCompatActivity implements View.OnClickLis
     private TextView seleccion;
     private LinearLayout textos;
     private Button continuar;
+    private int avatar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,25 +43,29 @@ public class EleccionAvatar extends AppCompatActivity implements View.OnClickLis
         switch (v.getId()) {
             case R.id.gian:
                 seleccion.setText(getResources().getString(R.string.gk));
-
+                avatar = R.drawable.gk;
                 break;
             case R.id.nandy:
                 seleccion.setText(getResources().getString(R.string.nandy));
+                avatar = R.drawable.nandy;
                 break;
             case R.id.leo:
                 seleccion.setText(getResources().getString(R.string.leo));
+                avatar = R.drawable.leo;
                 break;
             case R.id.kolarte:
                 seleccion.setText(getResources().getString(R.string.kolarte));
+                avatar = R.drawable.kolarte;
                 break;
             case R.id.continuar:
                 Intent i = new Intent(getApplicationContext(), Jugar.class);
+                i.putExtra("avatar", avatar);
                 startActivity(i);
                 break;
 
 
         }
         textos.setVisibility(View.VISIBLE);
-
+        continuar.setVisibility(View.VISIBLE);
     }
 }

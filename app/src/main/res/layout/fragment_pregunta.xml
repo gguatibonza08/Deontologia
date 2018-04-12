@@ -61,9 +61,10 @@
     </LinearLayout>
 
     <ImageView
-        android:layout_gravity="right"
+        android:id="@+id/avatar"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/nandy"/>
+        android:layout_gravity="right"
+        android:src="@drawable/nandy" />
 
 </LinearLayout>

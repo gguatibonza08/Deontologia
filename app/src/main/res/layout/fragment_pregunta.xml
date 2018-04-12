@@ -15,6 +15,7 @@
         app:cardBackgroundColor="#CCffffff">
 
         <TextView
+            android:id="@+id/Pregunta"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
@@ -31,6 +32,7 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/rtaA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -38,6 +40,7 @@
             android:text="@string/etica" />
 
         <Button
+            android:id="@+id/rtaB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -46,6 +49,7 @@
 
 
         <Button
+            android:id="@+id/rtaC"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -53,6 +57,7 @@
             android:text="@string/analisis" />
 
         <Button
+            android:id="@+id/rtaD"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"

@@ -7,15 +7,17 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PreguntaFragment extends Fragment {
+public class PreguntaFragment extends Fragment implements View.OnClickListener {
     private ImageView avatar;
     private int opcion;
+    private Button rtaA, rtaB, rtaC, rtaD;
 
 
     public PreguntaFragment() {
@@ -41,10 +43,40 @@ public class PreguntaFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_pregunta, container, false);
+        rtaA = root.findViewById(R.id.rtaA);
+        rtaB = root.findViewById(R.id.rtaB);
+        rtaC = root.findViewById(R.id.rtaC);
+        rtaD = root.findViewById(R.id.rtaD);
+
+        rtaA.setOnClickListener(this);
+        rtaB.setOnClickListener(this);
+        rtaC.setOnClickListener(this);
+        rtaD.setOnClickListener(this);
 
         avatar = root.findViewById(R.id.avatar);
         avatar.setImageDrawable(getResources().getDrawable(opcion));
         return root;
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.rtaA:
+                CorrectaFragment correcto = new CorrectaFragment();
+                getFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contenedor, correcto)
+                        .commit();
+                break;
+            default:
+
+                IncorrectoFragment incorrecto = new IncorrectoFragment();
+                getFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contenedor, incorrecto)
+                        .commit();
+                break;
+        }
+
+    }
 }

@@ -52,6 +52,7 @@
                 android:layout_weight=".5"
                 android:background="@drawable/boton"
                 android:text="@string/iniciar"
+                android:textColor="#FFF"
                 android:textSize="18sp" />
 
             <Button
@@ -61,7 +62,8 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginStart="5dp"
                 android:layout_weight=".5"
-                android:background="@drawable/boton"
+
+                android:textColor="#FFF" android:background="@drawable/boton"
                 android:text="@string/comoJugar"
                 android:textSize="18sp" />
 
@@ -74,7 +76,8 @@
             android:layout_marginTop="5dp"
             android:background="@drawable/boton"
             android:text="@string/AcercaApp"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textColor="#FFF"/>
     </LinearLayout>
 
 

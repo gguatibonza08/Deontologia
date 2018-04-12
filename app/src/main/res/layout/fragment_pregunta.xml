@@ -3,66 +3,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
+    android:padding="10dp"
     tools:context="co.com.gguatibonza.deontologia.PreguntaFragment">
 
-    <ImageView
-        android:id="@+id/imageView"
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        android:layout_height="100dp"
+        android:layout_marginBottom="50dp"
+        app:cardBackgroundColor="#CCffffff">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:fontFamily="@font/bevan"
-        android:gravity="center"
-        android:text="@string/preguntaprueba"
-        android:textSize="16dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/bevan"
+            android:gravity="center"
+            android:text="@string/preguntaprueba"
+            android:textSize="16dp" />
+    </android.support.v7.widget.CardView>
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:layout_weight="0.5"
+            android:background="#7B1FA2"
             android:text="@string/etica" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:layout_weight="0.5"
+            android:background="#FFC107"
             android:text="@string/proyección" />
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:orientation="horizontal">
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:layout_weight="0.5"
+            android:background="#00796B"
             android:text="@string/analisis" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:layout_weight="0.5"
+            android:background="#FF5252"
             android:text="@string/aspiracion" />
     </LinearLayout>
+
+    <ImageView
+        android:layout_gravity="right"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/nandy"/>
 
 </LinearLayout>

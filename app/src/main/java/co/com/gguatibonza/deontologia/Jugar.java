@@ -7,15 +7,26 @@ import android.support.v7.app.AppCompatActivity;
 
 public class Jugar extends AppCompatActivity {
     private int avatar;
+    private Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jugar);
         avatar = getIntent().getIntExtra("avatar", 0);
-        Bundle bundle = new Bundle();
+        bundle = new Bundle();
         bundle.putInt("avatar", avatar);
 
+        Fragment pregunta = PreguntaFragment.newInstance();
+        pregunta.setArguments(bundle);
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.contenedor, pregunta);
+        transaction.commit();
+    }
+
+
+    @Override
+    public void onBackPressed() {
         Fragment pregunta = PreguntaFragment.newInstance();
         pregunta.setArguments(bundle);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -16,7 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        md = MediaPlayer.create(this, R.raw.juego);
+        md = MediaPlayer.create(this, R.raw.principal);
         jugar = findViewById(R.id.MainJugar);
         como = findViewById(R.id.MainComo);
         acerca = findViewById(R.id.MainAcerca);
@@ -27,9 +28,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
+    protected void onResume() {
+        super.onResume();
         md.start();
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        md.stop();
     }
 
     @Override

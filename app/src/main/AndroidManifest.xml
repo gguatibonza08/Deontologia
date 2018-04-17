@@ -19,7 +19,8 @@
         <activity android:name=".AcercaDe" />
         <activity android:name=".ComoJugar" />
         <activity android:name=".Jugar" />
-        <activity android:name=".EleccionAvatar"></activity>
+        <activity android:name=".EleccionAvatar" />
+        <activity android:name=".Resultado"></activity>
     </application>
 
 </manifest>

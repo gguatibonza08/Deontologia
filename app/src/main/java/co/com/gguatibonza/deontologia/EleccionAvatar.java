@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import io.realm.Realm;
+
 public class EleccionAvatar extends AppCompatActivity implements View.OnClickListener {
 
     private CardView gian, nandy, leo, kolarte;
@@ -16,11 +18,13 @@ public class EleccionAvatar extends AppCompatActivity implements View.OnClickLis
     private LinearLayout textos;
     private Button continuar;
     private int avatar;
+    private Realm myRealm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eleccion_avatar);
+        myRealm = Realm.getDefaultInstance();
 
         gian = findViewById(R.id.gian);
         leo = findViewById(R.id.leo);
@@ -60,6 +64,16 @@ public class EleccionAvatar extends AppCompatActivity implements View.OnClickLis
             case R.id.continuar:
                 Intent i = new Intent(getApplicationContext(), Jugar.class);
                 i.putExtra("avatar", avatar);
+                myRealm.executeTransaction(new Realm.Transaction() {
+                    @Override
+                    public void execute(Realm realm) {
+                        Usuario usuario = new Usuario();
+                        usuario.setId(1);
+                        usuario.setAvatar(avatar);
+                        usuario.setPuntaje(0);
+                        realm.insertOrUpdate(usuario);
+                    }
+                });
                 startActivity(i);
                 break;
 

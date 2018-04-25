@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1032545346817",
+    "firebase_url": "https://deontologia-b42ea.firebaseio.com",
+    "project_id": "deontologia-b42ea",
+    "storage_bucket": "deontologia-b42ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1032545346817:android:a9fd677efddf43ed",
+        "android_client_info": {
+          "package_name": "co.com.gguatibonza.deontologia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1032545346817-og8ijqlpq8no4s0javedoev6nse7nj2d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.com.gguatibonza.deontologia",
+            "certificate_hash": "149d50f06ad7fa87ac1f8bb16ab6587eb0558829"
+          }
+        },
+        {
+          "client_id": "1032545346817-1p1pr2q0avlk1707584flq07qet080a6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBh2FgJ2ypS12vOOOGng035Q6CIsvBwqhI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1032545346817-1p1pr2q0avlk1707584flq07qet080a6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

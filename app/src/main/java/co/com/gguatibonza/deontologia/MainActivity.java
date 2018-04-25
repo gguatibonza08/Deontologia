@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         como.setOnClickListener(this);
         acerca.setOnClickListener(this);
     }
-
     @Override
     protected void onResume() {
         super.onResume();

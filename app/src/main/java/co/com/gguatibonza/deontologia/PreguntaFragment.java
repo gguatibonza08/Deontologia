@@ -10,13 +10,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.squareup.picasso.Picasso;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class PreguntaFragment extends Fragment implements View.OnClickListener {
     private ImageView avatar;
-    private int opcion;
+    private String opcion;
     private Button rtaA, rtaB, rtaC, rtaD;
 
 
@@ -33,7 +35,7 @@ public class PreguntaFragment extends Fragment implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         Bundle bundle = this.getArguments();
         if (bundle != null) {
-            opcion = bundle.getInt("avatar");
+            opcion = bundle.getString("avatar");
         }
 
     }
@@ -54,7 +56,7 @@ public class PreguntaFragment extends Fragment implements View.OnClickListener {
         rtaD.setOnClickListener(this);
 
         avatar = root.findViewById(R.id.avatar);
-        avatar.setImageDrawable(getResources().getDrawable(opcion));
+        Picasso.get().load(opcion).into(avatar);
         return root;
     }
 

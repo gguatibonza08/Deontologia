@@ -6,16 +6,16 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 public class Jugar extends AppCompatActivity {
-    private int avatar;
+    private String avatar;
     private Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jugar);
-        avatar = getIntent().getIntExtra("avatar", 0);
+        avatar = getIntent().getStringExtra("avatar");
         bundle = new Bundle();
-        bundle.putInt("avatar", avatar);
+        bundle.putString("avatar", avatar);
 
         Fragment pregunta = PreguntaFragment.newInstance();
         pregunta.setArguments(bundle);

@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "1032545346817",
-    "firebase_url": "https://deontologia-b42ea.firebaseio.com",
-    "project_id": "deontologia-b42ea",
-    "storage_bucket": "deontologia-b42ea.appspot.com"
+    "project_number": "462556995359",
+    "firebase_url": "https://deontologia-4f455.firebaseio.com",
+    "project_id": "deontologia-4f455",
+    "storage_bucket": "deontologia-4f455.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1032545346817:android:a9fd677efddf43ed",
+        "mobilesdk_app_id": "1:462556995359:android:a9fd677efddf43ed",
         "android_client_info": {
           "package_name": "co.com.gguatibonza.deontologia"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1032545346817-og8ijqlpq8no4s0javedoev6nse7nj2d.apps.googleusercontent.com",
+          "client_id": "462556995359-qm2728fp48tul1v0lceul8hqg4cmhsaa.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "co.com.gguatibonza.deontologia",
-            "certificate_hash": "149d50f06ad7fa87ac1f8bb16ab6587eb0558829"
+            "certificate_hash": "ce656c648a4e13cde86bb29a40b847e4d86e9322"
           }
         },
         {
-          "client_id": "1032545346817-1p1pr2q0avlk1707584flq07qet080a6.apps.googleusercontent.com",
+          "client_id": "462556995359-7ql2135l4o3j7r90jkhhclmcv2u2t7a8.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBh2FgJ2ypS12vOOOGng035Q6CIsvBwqhI"
+          "current_key": "AIzaSyBJus7qFztzysPYvjsFpy9iOITsHPvVj_0"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "1032545346817-1p1pr2q0avlk1707584flq07qet080a6.apps.googleusercontent.com",
+              "client_id": "462556995359-7ql2135l4o3j7r90jkhhclmcv2u2t7a8.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

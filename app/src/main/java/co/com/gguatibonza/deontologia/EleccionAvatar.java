@@ -55,7 +55,7 @@ public class EleccionAvatar extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.leo:
                 seleccion.setText(getResources().getString(R.string.leo));
-                avatar = R.drawable.leo;
+                // avatar = R.drawable.leo;
                 break;
             case R.id.kolarte:
                 seleccion.setText(getResources().getString(R.string.kolarte));

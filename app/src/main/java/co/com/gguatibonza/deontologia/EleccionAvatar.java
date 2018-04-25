@@ -6,25 +6,37 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import io.realm.Realm;
+import com.google.firebase.database.DatabaseReference;
+import com.squareup.picasso.Picasso;
 
 public class EleccionAvatar extends AppCompatActivity implements View.OnClickListener {
 
     private CardView gian, nandy, leo, kolarte;
+    private ImageView Igian, Inandy, Ileo, Ikolarte;
     private TextView seleccion;
     private LinearLayout textos;
     private Button continuar;
-    private int avatar;
-    private Realm myRealm;
+    private String avatar;
+    private DatabaseReference myData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eleccion_avatar);
-        myRealm = Realm.getDefaultInstance();
+
+        Igian = findViewById(R.id.ImagenGian);
+        Inandy = findViewById(R.id.ImagenNandy);
+        Ileo = findViewById(R.id.ImagenLeo);
+        Ikolarte = findViewById(R.id.ImagenKolarte);
+
+        Picasso.get().load("https://i.imgur.com/EYadhi1.png").into(Igian);
+        Picasso.get().load("https://i.imgur.com/darPqBv.png").into(Inandy);
+        Picasso.get().load("https://i.imgur.com/L4beccz.png").into(Ileo);
+        Picasso.get().load("https://i.imgur.com/rve4RZ8.png").into(Ikolarte);
 
         gian = findViewById(R.id.gian);
         leo = findViewById(R.id.leo);
@@ -47,33 +59,24 @@ public class EleccionAvatar extends AppCompatActivity implements View.OnClickLis
         switch (v.getId()) {
             case R.id.gian:
                 seleccion.setText(getResources().getString(R.string.gk));
-                avatar = R.drawable.gk;
+                avatar = "https://i.imgur.com/EYadhi1.png";
+
                 break;
             case R.id.nandy:
                 seleccion.setText(getResources().getString(R.string.nandy));
-                avatar = R.drawable.nandy;
+                avatar = "https://i.imgur.com/darPqBv.png";
                 break;
             case R.id.leo:
                 seleccion.setText(getResources().getString(R.string.leo));
-                // avatar = R.drawable.leo;
+                avatar = "https://i.imgur.com/L4beccz.png";
                 break;
             case R.id.kolarte:
                 seleccion.setText(getResources().getString(R.string.kolarte));
-                avatar = R.drawable.kolarte;
+                avatar = "https://i.imgur.com/rve4RZ8.png";
                 break;
             case R.id.continuar:
                 Intent i = new Intent(getApplicationContext(), Jugar.class);
                 i.putExtra("avatar", avatar);
-                myRealm.executeTransaction(new Realm.Transaction() {
-                    @Override
-                    public void execute(Realm realm) {
-                        Usuario usuario = new Usuario();
-                        usuario.setId(1);
-                        usuario.setAvatar(avatar);
-                        usuario.setPuntaje(0);
-                        realm.insertOrUpdate(usuario);
-                    }
-                });
                 startActivity(i);
                 break;
 
@@ -82,7 +85,6 @@ public class EleccionAvatar extends AppCompatActivity implements View.OnClickLis
         textos.setVisibility(View.VISIBLE);
         continuar.setVisibility(View.VISIBLE);
     }
-
 
 
 }

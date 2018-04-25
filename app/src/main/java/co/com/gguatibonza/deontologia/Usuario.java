@@ -1,10 +1,7 @@
 package co.com.gguatibonza.deontologia;
 
-import io.realm.RealmObject;
-import io.realm.annotations.PrimaryKey;
+public class Usuario {
 
-public class Usuario extends RealmObject {
-    @PrimaryKey
     private int id;
     private String correo;
     private int puntaje;

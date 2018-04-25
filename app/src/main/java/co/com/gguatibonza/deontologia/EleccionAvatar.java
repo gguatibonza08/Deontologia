@@ -82,4 +82,7 @@ public class EleccionAvatar extends AppCompatActivity implements View.OnClickLis
         textos.setVisibility(View.VISIBLE);
         continuar.setVisibility(View.VISIBLE);
     }
+
+
+
 }

@@ -17,6 +17,7 @@ public class EleccionAvatar extends AppCompatActivity implements View.OnClickLis
 
     private CardView gian, nandy, leo, kolarte;
     private ImageView Igian, Inandy, Ileo, Ikolarte;
+    private String path;
     private TextView seleccion;
     private LinearLayout textos;
     private Button continuar;
@@ -60,23 +61,27 @@ public class EleccionAvatar extends AppCompatActivity implements View.OnClickLis
             case R.id.gian:
                 seleccion.setText(getResources().getString(R.string.gk));
                 avatar = "https://i.imgur.com/EYadhi1.png";
-
+                path="gk";
                 break;
             case R.id.nandy:
                 seleccion.setText(getResources().getString(R.string.nandy));
                 avatar = "https://i.imgur.com/darPqBv.png";
+                path="nandy";
                 break;
             case R.id.leo:
                 seleccion.setText(getResources().getString(R.string.leo));
                 avatar = "https://i.imgur.com/L4beccz.png";
+                path="leo";
                 break;
             case R.id.kolarte:
                 seleccion.setText(getResources().getString(R.string.kolarte));
                 avatar = "https://i.imgur.com/rve4RZ8.png";
+                path="Kolarte";
                 break;
             case R.id.continuar:
                 Intent i = new Intent(getApplicationContext(), Jugar.class);
                 i.putExtra("avatar", avatar);
+                i.putExtra("path", path);
                 startActivity(i);
                 break;
 

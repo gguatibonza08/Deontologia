@@ -21,6 +21,7 @@ import java.util.ArrayList;
  */
 public class PreguntaFragment extends Fragment implements View.OnClickListener {
     private ImageView avatar;
+    private String path;
     private String opcion;
     private TextView textoPregunta;
     private Button rtaA, rtaB, rtaC, rtaD;
@@ -40,6 +41,7 @@ public class PreguntaFragment extends Fragment implements View.OnClickListener {
         Bundle bundle = this.getArguments();
         if (bundle != null) {
             opcion = bundle.getString("avatar");
+            path=bundle.getString("path");
         }
 
     }

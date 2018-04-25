@@ -6,11 +6,19 @@ public class Pregunta {
     private int id;
     private String dificultad;
     private int peso;
-    private ArrayList<Respuesta> respuestas;
+    private ArrayList<Respuesta> respuestas = new ArrayList<>();
     private Respuesta correta;
     private String contenido;
     private String explicacion;
 
+
+    public String getExplicacion() {
+        return explicacion;
+    }
+
+    public void setExplicacion(String explicacion) {
+        this.explicacion = explicacion;
+    }
 
     public Pregunta(int id, String dificultad, int peso, ArrayList<Respuesta> respuestas, Respuesta correta, String contenido) {
         this.id = id;

@@ -14,30 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/puntaje"
-            android:textColor="#fff"
-            android:textSize="18dp" />
-
-        <TextView
-            android:id="@+id/traerPuntaje"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text=""
-            android:textColor="#fff"
-            android:textSize="18dp" />
-    </LinearLayout>
-
     <FrameLayout
         android:id="@+id/contenedor"
         android:layout_width="match_parent"

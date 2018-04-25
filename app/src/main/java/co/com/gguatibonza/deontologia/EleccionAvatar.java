@@ -1,6 +1,7 @@
 package co.com.gguatibonza.deontologia;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -11,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 public class EleccionAvatar extends AppCompatActivity implements View.OnClickListener {
@@ -21,19 +23,19 @@ public class EleccionAvatar extends AppCompatActivity implements View.OnClickLis
     private TextView seleccion;
     private LinearLayout textos;
     private Button continuar;
-    private String avatar;
-    private DatabaseReference myData;
+    MediaPlayer md;
+    private String name;
+    private DatabaseReference myDatabases;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eleccion_avatar);
-
+        myDatabases = FirebaseDatabase.getInstance().getReference();
         Igian = findViewById(R.id.ImagenGian);
         Inandy = findViewById(R.id.ImagenNandy);
         Ileo = findViewById(R.id.ImagenLeo);
         Ikolarte = findViewById(R.id.ImagenKolarte);
-
         Picasso.get().load("https://i.imgur.com/EYadhi1.png").into(Igian);
         Picasso.get().load("https://i.imgur.com/darPqBv.png").into(Inandy);
         Picasso.get().load("https://i.imgur.com/L4beccz.png").into(Ileo);
@@ -60,28 +62,30 @@ public class EleccionAvatar extends AppCompatActivity implements View.OnClickLis
         switch (v.getId()) {
             case R.id.gian:
                 seleccion.setText(getResources().getString(R.string.gk));
-                avatar = "https://i.imgur.com/EYadhi1.png";
-                path="gk";
+                path = "gk/original";
+                name = "gk";
                 break;
             case R.id.nandy:
                 seleccion.setText(getResources().getString(R.string.nandy));
-                avatar = "https://i.imgur.com/darPqBv.png";
-                path="nandy";
+                path = "nandy/original";
+                name = "nandy";
                 break;
             case R.id.leo:
                 seleccion.setText(getResources().getString(R.string.leo));
-                avatar = "https://i.imgur.com/L4beccz.png";
-                path="leo";
+                path = "leo/original";
+                name = "leo";
                 break;
             case R.id.kolarte:
                 seleccion.setText(getResources().getString(R.string.kolarte));
-                avatar = "https://i.imgur.com/rve4RZ8.png";
-                path="Kolarte";
+                path = "Kolarte/original";
+                name = "Kolarte";
                 break;
             case R.id.continuar:
+
+                Usuario usuario = new Usuario((int) (Math.random() * 1000 + 1), 0, path, name, 0);
                 Intent i = new Intent(getApplicationContext(), Jugar.class);
-                i.putExtra("avatar", avatar);
-                i.putExtra("path", path);
+                i.putExtra("id", usuario.getId() + "");
+                myDatabases.child("usuario").child(usuario.getId() + "").setValue(usuario);
                 startActivity(i);
                 break;
 

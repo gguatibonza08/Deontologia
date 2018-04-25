@@ -21,9 +21,9 @@
     <string name="respuestaIncorrecta">EXPLICACIÓN</string>
     <string name="textoPor">Esta APP fue pensada para educar a los alumnos de Ingenieria de sistemas que estan cursando los primeros semestres de sus carrera sobre temas relacionados con la etica profesional.</string>
     <string name="todo">TODO</string>
-    <string name="puntaje">PUNTAJE</string>
+    <string name="puntaje">TU PUNTAJE:</string>
     <string name="instrucciones">Cada jugador debe elegir el avatar con el que lo acompañará durante el juego, y luego le da continuar paara empezar el juego, aparecen preguntas respecto a la deontología del ingeniero de sistemas, según sea la respuesta si es correcta y es de difícultad alta saldrá el avatar felicitando, y cuando sea incorrecto saldrá la explicación para que el estudiante entienda las preguntas y al entenderla podrá continuar el juego</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="logroCumplido">LOGRO CUMPLIDO</string>
+    <string name="logroCumplido">BIEN HECHO</string>
 
 </resources>

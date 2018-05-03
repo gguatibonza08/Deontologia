@@ -17,11 +17,13 @@ public class Usuario {
     private String dificultadActual;
     private int actual;
     private ArrayList<Integer> respondidas = new ArrayList<>();
+    private int rachaVictorias;
+    private int rachaDerrotas;
 
     public Usuario() {
     }
 
-    public Usuario(int puntaje, String avatar, String nombre, int fallos, String dificultadActual, int actual, String username) {
+    public Usuario(int puntaje, String avatar, String nombre, int fallos, String dificultadActual, int actual, String username, int rachaVictorias, int rachaDerrotas) {
         this.puntaje = puntaje;
         this.avatar = avatar;
         this.nombre = nombre;
@@ -29,6 +31,24 @@ public class Usuario {
         this.dificultadActual = dificultadActual;
         this.actual = actual;
         this.username = username;
+        this.rachaVictorias = rachaVictorias;
+        this.rachaDerrotas = rachaDerrotas;
+    }
+
+    public int getRachaVictorias() {
+        return rachaVictorias;
+    }
+
+    public void setRachaVictorias(int rachaVictorias) {
+        this.rachaVictorias = rachaVictorias;
+    }
+
+    public int getRachaDerrotas() {
+        return rachaDerrotas;
+    }
+
+    public void setRachaDerrotas(int rachaDerrotas) {
+        this.rachaDerrotas = rachaDerrotas;
     }
 
     public ArrayList<Integer> getRespondidas() {
@@ -116,6 +136,8 @@ public class Usuario {
         result.put("actual", actual);
         result.put("username", username);
         result.put("respondidas", respondidas);
+        result.put("rachaVictorias", rachaVictorias);
+        result.put("rachaDerrotas", rachaDerrotas);
         return result;
     }
 }

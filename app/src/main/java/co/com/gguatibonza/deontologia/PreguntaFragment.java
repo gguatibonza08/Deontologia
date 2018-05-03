@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -82,7 +81,6 @@ public class PreguntaFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 user = dataSnapshot.getValue(Usuario.class);
-                Log.e("aiuda", dataSnapshot.toString());
                 myDatabases.child(user.getAvatar()).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -144,14 +142,66 @@ public class PreguntaFragment extends Fragment implements View.OnClickListener {
     }
 
     private void validarRespuesta(int key) {
-        if (user.getActual() == 6) {
-            user.setDificultadActual("facil");
-        }
-        if (user.getActual() == 12) {
-            user.setDificultadActual("dificil");
-        }
-        user.setActual(user.getActual() + 1);
+
         if (temp.getCorreta().getId() == temp.getRespuestas().get(key).getId()) {
+            user.setRachaVictorias(user.getRachaVictorias() + 1);
+            user.setRachaDerrotas(0);
+            int nueva = 0;
+            switch (user.getDificultadActual()) {
+                case "dificil":
+
+                    if (user.getRachaVictorias() == 2) {
+                        user.setRachaVictorias(0);
+                        user.setDificultadActual("medio");
+                        do {
+                            nueva = (int) (Math.random() * 6 + 1);
+                        } while (user.getRespondidas().contains(nueva));
+                        user.setActual(nueva);
+
+                    } else {
+                        do {
+                            nueva = (int) (Math.random() * 6 + 13);
+                        } while (user.getRespondidas().contains(nueva));
+                        user.setActual(nueva);
+                    }
+
+                    break;
+                case "medio":
+
+                    if (user.getRachaVictorias() == 2) {
+                        user.setRachaVictorias(0);
+                        user.setDificultadActual("dificil");
+                        do {
+                            nueva = (int) (Math.random() * 6 + 13);
+                        } while (user.getRespondidas().contains(nueva));
+                        user.setActual(nueva);
+
+                    } else {
+                        do {
+                            nueva = (int) (Math.random() * 6 + 1);
+                        } while (user.getRespondidas().contains(nueva));
+                        user.setActual(nueva);
+                    }
+
+                    break;
+                case "facil":
+
+                    if (user.getRachaVictorias() == 2) {
+                        user.setRachaVictorias(0);
+                        user.setDificultadActual("medio");
+                        do {
+                            nueva = (int) (Math.random() * 6 + 1);
+                        } while (user.getRespondidas().contains(nueva));
+                        user.setActual(nueva);
+
+                    } else {
+                        do {
+                            nueva = (int) (Math.random() * 6 + 7);
+                        } while (user.getRespondidas().contains(nueva));
+                        user.setActual(nueva);
+                    }
+                    break;
+            }
             user.setPuntaje(user.getPuntaje() + temp.getPeso());
             user.setAvatar(user.getNombre() + "/aciertos/" + ((int) (Math.random() * 3 + 1)));
             Map<String, Object> postValues = user.toMap();
@@ -168,6 +218,52 @@ public class PreguntaFragment extends Fragment implements View.OnClickListener {
                     .commit();
 
         } else {
+            user.setRachaVictorias(0);
+            user.setRachaDerrotas(user.getRachaDerrotas() + 1);
+            int nueva = 0;
+            switch (user.getDificultadActual()) {
+                case "dificil":
+                    if (user.getRachaDerrotas() == 2) {
+                        user.setRachaDerrotas(0);
+                        user.setDificultadActual("medio");
+                        do {
+                            nueva = (int) (Math.random() * 6 + 1);
+                        } while (user.getRespondidas().contains(nueva));
+                        user.setActual(nueva);
+                    } else {
+                        do {
+                            nueva = (int) (Math.random() * 6 + 13);
+                        } while (user.getRespondidas().contains(nueva));
+                        user.setActual(nueva);
+                    }
+                    break;
+                case "medio":
+
+                    if (user.getRachaDerrotas() == 2) {
+                        user.setRachaDerrotas(0);
+                        user.setDificultadActual("facil");
+                        do {
+                            nueva = (int) (Math.random() * 6 + 7);
+                        } while (user.getRespondidas().contains(nueva));
+                        user.setActual(nueva);
+
+                    } else {
+                        do {
+                            nueva = (int) (Math.random() * 6 + 1);
+                        } while (user.getRespondidas().contains(nueva));
+                        user.setActual(nueva);
+                    }
+
+                    break;
+                case "facil":
+                    do {
+                        nueva = (int) (Math.random() * 6 + 7);
+                    } while (user.getRespondidas().contains(nueva));
+                    user.setActual(nueva);
+                    break;
+
+            }
+
             user.setFallos(user.getFallos() + 1);
             user.setAvatar(user.getNombre() + "/equivocacion/" + user.getFallos());
             Map<String, Object> postValues = user.toMap();

@@ -73,7 +73,7 @@ public class EleccionAvatar extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.continuar:
                 name = username.getText().toString();
-                Usuario usuario = new Usuario(0, path, aux, 0, "medio", 1, name);
+                Usuario usuario = new Usuario(0, path, aux, 0, "medio", (int) (Math.random() * 6 + 1), name, 0, 0);
                 Intent i = new Intent(getApplicationContext(), Jugar.class);
                 i.putExtra("id", usuario.getUsername());
                 myDatabases.child("usuario").child(usuario.getUsername()).setValue(usuario);

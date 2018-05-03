@@ -1,7 +1,6 @@
 package co.com.gguatibonza.deontologia;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -210,7 +209,6 @@ public class PreguntaFragment extends Fragment implements View.OnClickListener {
             myDatabases.updateChildren(childUpdates);
             Bundle envio = new Bundle();
             envio.putString("id", user.getUsername());
-            getContext().stopService(new Intent(getContext(), MyService.class));
             CorrectaFragment correcto = new CorrectaFragment();
             correcto.setArguments(envio);
             getFragmentManager()
@@ -273,8 +271,7 @@ public class PreguntaFragment extends Fragment implements View.OnClickListener {
 
             Bundle incore = new Bundle();
             incore.putString("id", user.getUsername());
-            incore.putString("explicacion", temp.getExplicacion());
-            getContext().stopService(new Intent(getContext(), MyService.class));
+            incore.putSerializable("pregunta", temp);
             IncorrectoFragment incorrecto = new IncorrectoFragment();
             incorrecto.setArguments(incore);
             getFragmentManager()

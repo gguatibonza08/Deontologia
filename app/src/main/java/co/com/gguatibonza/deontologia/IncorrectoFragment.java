@@ -27,9 +27,10 @@ import com.squareup.picasso.Picasso;
  */
 public class IncorrectoFragment extends Fragment {
 
-    private TextView explicacion;
+    private TextView explicacion, pregunta;
     private ImageView imagenIncorrect;
-    private String imagen, explication;
+    private String imagen;
+    private Pregunta temp;
     private String path;
     private DatabaseReference myDatabases;
     private Usuario user;
@@ -46,7 +47,7 @@ public class IncorrectoFragment extends Fragment {
         Bundle bundle = this.getArguments();
         if (bundle != null) {
             path = bundle.getString("id");
-            explication = bundle.getString("explicacion");
+            temp = (Pregunta) bundle.getSerializable("pregunta");
         }
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -91,7 +92,8 @@ public class IncorrectoFragment extends Fragment {
             }
         });
 
-        explicacion.setText(explication);
+        explicacion.setText(temp.getExplicacion());
+        pregunta.setText(temp.getContenido());
 
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,18 +103,25 @@ public class IncorrectoFragment extends Fragment {
                     Intent i = new Intent(getContext(), Resultado.class);
                     i.putExtra("id", path);
                     startActivity(i);
-                    getContext().stopService(new Intent(getContext(), MyService.class));
                     getActivity().finish();
                 } else {
-                    Bundle bundle = new Bundle();
-                    bundle.putString("id", path);
-                    PreguntaFragment pregunta = new PreguntaFragment();
-                    pregunta.setArguments(bundle);
-                    getFragmentManager()
-                            .beginTransaction()
-                            .replace(R.id.contenedor, pregunta)
-                            .commit();
-                    getContext().startService(new Intent(getContext(), MyService.class));
+                    if (user.getRespondidas().size() == 10) {
+                        Intent i = new Intent(getContext(), Resultado.class);
+                        i.putExtra("id", path);
+                        startActivity(i);
+
+                        getActivity().finish();
+                    } else {
+                        Bundle bundle = new Bundle();
+                        bundle.putString("id", path);
+                        PreguntaFragment pregunta = new PreguntaFragment();
+                        pregunta.setArguments(bundle);
+                        getFragmentManager()
+                                .beginTransaction()
+                                .replace(R.id.contenedor, pregunta)
+                                .commit();
+
+                    }
                 }
             }
         });

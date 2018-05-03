@@ -96,15 +96,22 @@ public class CorrectaFragment extends Fragment {
         siguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle bundle = new Bundle();
-                bundle.putString("id", path);
-                PreguntaFragment pregunta = new PreguntaFragment();
-                pregunta.setArguments(bundle);
-                getFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.contenedor, pregunta)
-                        .commit();
-                getContext().startService(new Intent(getContext(), MyService.class));
+                if (user.getRespondidas().size() == 10) {
+                    Intent i = new Intent(getContext(), Resultado.class);
+                    i.putExtra("id", path);
+                    startActivity(i);
+                    getActivity().finish();
+                } else {
+                    Bundle bundle = new Bundle();
+                    bundle.putString("id", path);
+                    PreguntaFragment pregunta = new PreguntaFragment();
+                    pregunta.setArguments(bundle);
+                    getFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.contenedor, pregunta)
+                            .commit();
+
+                }
             }
         });
 

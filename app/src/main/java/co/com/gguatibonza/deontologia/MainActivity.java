@@ -13,7 +13,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        startService(new Intent(this, MyService.class));
         setContentView(R.layout.activity_main);
         jugar = findViewById(R.id.MainJugar);
         como = findViewById(R.id.MainComo);

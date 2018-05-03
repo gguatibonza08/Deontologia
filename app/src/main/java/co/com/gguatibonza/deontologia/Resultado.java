@@ -16,6 +16,7 @@ public class Resultado extends AppCompatActivity {
     private String id, foto;
     private ImageView imagen;
     private TextView texo;
+    private TextView usuariofinal;
     private DatabaseReference myDatabases;
     private Usuario user;
 
@@ -24,6 +25,7 @@ public class Resultado extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultado);
         myDatabases = FirebaseDatabase.getInstance().getReference();
+        usuariofinal = findViewById(R.id.usuariofinal);
         id = getIntent().getStringExtra("id");
         imagen = findViewById(R.id.imagenFinal);
         texo = findViewById(R.id.puntosFinales);
@@ -38,6 +40,7 @@ public class Resultado extends AppCompatActivity {
                         foto = dataSnapshot.getValue().toString();
                         Picasso.get().load(foto).into(imagen);
                         texo.setText(user.getPuntaje() + "");
+                        usuariofinal.setText(user.getUsername());
                     }
 
                     @Override

@@ -11,6 +11,15 @@ public class Pregunta {
     private String contenido;
     private String explicacion;
 
+    public Pregunta(int id, String dificultad, int peso, ArrayList<Respuesta> respuestas, Respuesta correta, String contenido, String explicacion) {
+        this.id = id;
+        this.dificultad = dificultad;
+        this.peso = peso;
+        this.respuestas = respuestas;
+        this.correta = correta;
+        this.contenido = contenido;
+        this.explicacion = explicacion;
+    }
 
     public String getExplicacion() {
         return explicacion;
@@ -18,15 +27,6 @@ public class Pregunta {
 
     public void setExplicacion(String explicacion) {
         this.explicacion = explicacion;
-    }
-
-    public Pregunta(int id, String dificultad, int peso, ArrayList<Respuesta> respuestas, Respuesta correta, String contenido) {
-        this.id = id;
-        this.dificultad = dificultad;
-        this.peso = peso;
-        this.respuestas = respuestas;
-        this.correta = correta;
-        this.contenido = contenido;
     }
 
     public Pregunta() {

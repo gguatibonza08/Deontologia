@@ -1,15 +1,13 @@
 package co.com.gguatibonza.deontologia;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -19,19 +17,18 @@ public class EleccionAvatar extends AppCompatActivity implements View.OnClickLis
 
     private CardView gian, nandy, leo, kolarte;
     private ImageView Igian, Inandy, Ileo, Ikolarte;
-    private String path;
-    private TextView seleccion;
-    private LinearLayout textos;
+    private String path, aux;
     private Button continuar;
-    MediaPlayer md;
     private String name;
     private DatabaseReference myDatabases;
+    private TextInputEditText username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eleccion_avatar);
         myDatabases = FirebaseDatabase.getInstance().getReference();
+        username = findViewById(R.id.nombreUsuario);
         Igian = findViewById(R.id.ImagenGian);
         Inandy = findViewById(R.id.ImagenNandy);
         Ileo = findViewById(R.id.ImagenLeo);
@@ -45,8 +42,6 @@ public class EleccionAvatar extends AppCompatActivity implements View.OnClickLis
         leo = findViewById(R.id.leo);
         kolarte = findViewById(R.id.kolarte);
         nandy = findViewById(R.id.nandy);
-        seleccion = findViewById(R.id.seleccion);
-        textos = findViewById(R.id.textos);
         continuar = findViewById(R.id.continuar);
 
         gian.setOnClickListener(this);
@@ -61,39 +56,32 @@ public class EleccionAvatar extends AppCompatActivity implements View.OnClickLis
 
         switch (v.getId()) {
             case R.id.gian:
-                seleccion.setText(getResources().getString(R.string.gk));
                 path = "gk/original";
-                name = "gk";
+                aux = "gk";
                 break;
             case R.id.nandy:
-                seleccion.setText(getResources().getString(R.string.nandy));
                 path = "nandy/original";
-                name = "nandy";
+                aux = "nandy";
                 break;
             case R.id.leo:
-                seleccion.setText(getResources().getString(R.string.leo));
                 path = "leo/original";
-                name = "leo";
+                aux = "leo";
                 break;
             case R.id.kolarte:
-                seleccion.setText(getResources().getString(R.string.kolarte));
                 path = "Kolarte/original";
-                name = "Kolarte";
+                aux = "Kolarte";
                 break;
             case R.id.continuar:
-
-                Usuario usuario = new Usuario((int) (Math.random() * 1000 + 1), 0, path, name, 0);
+                name = username.getText().toString();
+                Usuario usuario = new Usuario(0, path, aux, 0, "medio", 1, name);
                 Intent i = new Intent(getApplicationContext(), Jugar.class);
-                i.putExtra("id", usuario.getId() + "");
-                myDatabases.child("usuario").child(usuario.getId() + "").setValue(usuario);
+                i.putExtra("id", usuario.getUsername());
+                myDatabases.child("usuario").child(usuario.getUsername()).setValue(usuario);
                 startActivity(i);
                 break;
 
 
         }
-        textos.setVisibility(View.VISIBLE);
         continuar.setVisibility(View.VISIBLE);
     }
-
-
 }

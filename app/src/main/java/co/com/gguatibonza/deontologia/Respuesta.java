@@ -4,13 +4,10 @@ public class Respuesta {
 
     private int id;
     private String contenido;
-    private String validar;
 
-
-    public Respuesta(int id, String contenido, String validar) {
+    public Respuesta(int id, String contenido) {
         this.id = id;
         this.contenido = contenido;
-        this.validar = validar;
     }
 
     public Respuesta() {
@@ -30,14 +27,6 @@ public class Respuesta {
 
     public void setContenido(String contenido) {
         this.contenido = contenido;
-    }
-
-    public String getValidar() {
-        return validar;
-    }
-
-    public void setValidar(String validar) {
-        this.validar = validar;
     }
 
 }

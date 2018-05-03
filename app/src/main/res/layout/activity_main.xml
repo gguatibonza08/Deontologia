@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -26,14 +25,12 @@
             android:textColor="#ffff"
             android:textSize="30sp" />
 
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/animation_view"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="30dp"
-            app:lottie_autoPlay="true"
-            app:lottie_fileName="share_for_graminsta_app.json"
-            app:lottie_loop="true" />
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/todos" />
 
         <LinearLayout
             android:layout_width="330dp"
@@ -63,8 +60,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight=".5"
 
-                android:textColor="#FFF" android:background="@drawable/boton"
+                android:background="@drawable/boton"
                 android:text="@string/comoJugar"
+                android:textColor="#FFF"
                 android:textSize="18sp" />
 
         </LinearLayout>
@@ -76,8 +74,8 @@
             android:layout_marginTop="5dp"
             android:background="@drawable/boton"
             android:text="@string/AcercaApp"
-            android:textSize="18sp"
-            android:textColor="#FFF"/>
+            android:textColor="#FFF"
+            android:textSize="18sp" />
     </LinearLayout>
 
 

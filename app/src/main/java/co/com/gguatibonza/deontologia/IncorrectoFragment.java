@@ -96,15 +96,24 @@ public class IncorrectoFragment extends Fragment {
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle bundle = new Bundle();
-                bundle.putString("id", path);
-                PreguntaFragment pregunta = new PreguntaFragment();
-                pregunta.setArguments(bundle);
-                getFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.contenedor, pregunta)
-                        .commit();
-                getContext().startService(new Intent(getContext(), MyService.class));
+
+                if (user.getFallos() > 3) {
+                    Intent i = new Intent(getContext(), Resultado.class);
+                    i.putExtra("id", path);
+                    startActivity(i);
+                    getContext().stopService(new Intent(getContext(), MyService.class));
+                    getActivity().finish();
+                } else {
+                    Bundle bundle = new Bundle();
+                    bundle.putString("id", path);
+                    PreguntaFragment pregunta = new PreguntaFragment();
+                    pregunta.setArguments(bundle);
+                    getFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.contenedor, pregunta)
+                            .commit();
+                    getContext().startService(new Intent(getContext(), MyService.class));
+                }
             }
         });
 

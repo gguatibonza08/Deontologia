@@ -15,10 +15,9 @@
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:elevation="10dp"
         android:fontFamily="@font/bevan"
         android:gravity="center"
@@ -26,10 +25,28 @@
         android:textColor="#FFF"
         android:textSize="25sp" />
 
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:hint="@string/nombreUsuario"
+        android:textColorHint="@color/textCard">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/nombreUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aclonica"
+            android:inputType="text"
+            android:textColor="@color/textCard"
+            android:textSize="30sp" />
+
+    </android.support.design.widget.TextInputLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:orientation="horizontal"
         android:padding="3dp"
         android:weightSum="1">
@@ -55,18 +72,9 @@
                     android:id="@+id/ImagenGian"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_margin="5dp"
                     android:src="@mipmap/ic_launcher_round" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:fontFamily="@font/aclonica"
-                    android:text="@string/gk"
-                    android:textAlignment="center"
-                    android:textColor="@color/textCard"
-                    android:textStyle="bold" />
             </LinearLayout>
 
 
@@ -92,18 +100,8 @@
                     android:id="@+id/ImagenNandy"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_margin="5dp"
                     android:src="@mipmap/ic_launcher_round" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:fontFamily="@font/aclonica"
-                    android:text="@string/nandy"
-                    android:textAlignment="center"
-                    android:textColor="@color/textCard"
-                    android:textStyle="bold" />
             </LinearLayout>
 
 
@@ -140,18 +138,9 @@
                     android:id="@+id/ImagenKolarte"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_margin="5dp"
                     android:src="@mipmap/ic_launcher_round" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:fontFamily="@font/aclonica"
-                    android:text="@string/kolarte"
-                    android:textAlignment="center"
-                    android:textColor="@color/textCard"
-                    android:textStyle="bold" />
             </LinearLayout>
 
 
@@ -177,49 +166,14 @@
                     android:id="@+id/ImagenLeo"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_margin="5dp"
                     android:src="@mipmap/ic_launcher_round" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:fontFamily="@font/aclonica"
-                    android:text="@string/leo"
-                    android:textAlignment="center"
-                    android:textColor="@color/textCard"
-                    android:textStyle="bold" />
             </LinearLayout>
 
 
         </android.support.v7.widget.CardView>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/textos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:visibility="gone">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/hazEscogidoA"
-            android:textColor="@color/textDark"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/seleccion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/textDark"
-            android:textSize="20sp"
-            android:textStyle="bold" />
     </LinearLayout>
 
     <Button

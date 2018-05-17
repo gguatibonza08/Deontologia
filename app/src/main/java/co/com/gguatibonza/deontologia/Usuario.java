@@ -19,6 +19,8 @@ public class Usuario {
     private ArrayList<Integer> respondidas = new ArrayList<>();
     private int rachaVictorias;
     private int rachaDerrotas;
+    private ArrayList<Integer> correctas = new ArrayList<>();
+    private ArrayList<Integer> incorrectas = new ArrayList<>();
 
     public Usuario() {
     }
@@ -33,6 +35,22 @@ public class Usuario {
         this.username = username;
         this.rachaVictorias = rachaVictorias;
         this.rachaDerrotas = rachaDerrotas;
+    }
+
+    public ArrayList<Integer> getCorrectas() {
+        return correctas;
+    }
+
+    public void setCorrectas(ArrayList<Integer> correctas) {
+        this.correctas = correctas;
+    }
+
+    public ArrayList<Integer> getIncorrectas() {
+        return incorrectas;
+    }
+
+    public void setIncorrectas(ArrayList<Integer> incorrectas) {
+        this.incorrectas = incorrectas;
     }
 
     public int getRachaVictorias() {
@@ -138,6 +156,8 @@ public class Usuario {
         result.put("respondidas", respondidas);
         result.put("rachaVictorias", rachaVictorias);
         result.put("rachaDerrotas", rachaDerrotas);
+        result.put("correctas", correctas);
+        result.put("incorrectas", incorrectas);
         return result;
     }
 }

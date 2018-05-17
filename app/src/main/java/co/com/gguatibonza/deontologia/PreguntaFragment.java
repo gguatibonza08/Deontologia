@@ -143,6 +143,7 @@ public class PreguntaFragment extends Fragment implements View.OnClickListener {
     private void validarRespuesta(int key) {
 
         if (temp.getCorreta().getId() == temp.getRespuestas().get(key).getId()) {
+            user.getCorrectas().add(temp.getId());
             user.setRachaVictorias(user.getRachaVictorias() + 1);
             user.setRachaDerrotas(0);
             int nueva = 0;
@@ -217,6 +218,7 @@ public class PreguntaFragment extends Fragment implements View.OnClickListener {
 
         } else {
             user.setRachaVictorias(0);
+            user.getIncorrectas().add(temp.getId());
             user.setRachaDerrotas(user.getRachaDerrotas() + 1);
             int nueva = 0;
             switch (user.getDificultadActual()) {

@@ -68,6 +68,7 @@ public class IncorrectoFragment extends Fragment {
         explicacion = view.findViewById(R.id.traerExplicacion);
         imagenIncorrect = view.findViewById(R.id.imagenIncorrecta);
         boton = view.findViewById(R.id.continuarIncorrecta);
+        pregunta = view.findViewById(R.id.preguntaErrada);
 
         myDatabases.child("usuario").child(path).addValueEventListener(new ValueEventListener() {
             @Override
